@@ -1,0 +1,154 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Select Tool Icon -->
+    <DrawingImage x:Key="SelectIcon">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="Black">
+                <GeometryDrawing.Geometry>
+                    <PathGeometry>
+                        <PathFigure StartPoint="0,0">
+                            <LineSegment Point="8,12"/>
+                            <LineSegment Point="4,12"/>
+                            <LineSegment Point="8,16"/>
+                            <LineSegment Point="12,12"/>
+                            <LineSegment Point="8,12"/>
+                            <LineSegment Point="16,0"/>
+                        </PathFigure>
+                    </PathGeometry>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <!-- Pan Tool Icon -->
+    <DrawingImage x:Key="PanIcon">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="Black">
+                <GeometryDrawing.Geometry>
+                    <PathGeometry>
+                        <PathFigure StartPoint="8,0">
+                            <LineSegment Point="8,16"/>
+                            <LineSegment Point="0,8"/>
+                            <LineSegment Point="16,8"/>
+                        </PathFigure>
+                    </PathGeometry>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <!-- Zoom Tool Icon -->
+    <DrawingImage x:Key="ZoomIcon">
+        <DrawingImage.Drawing>
+            <GeometryDrawing>
+                <GeometryDrawing.Geometry>
+                    <GeometryGroup>
+                        <EllipseGeometry Center="6,6" RadiusX="5" RadiusY="5"/>
+                        <PathGeometry>
+                            <PathFigure StartPoint="10,10">
+                                <LineSegment Point="16,16"/>
+                            </PathFigure>
+                        </PathGeometry>
+                    </GeometryGroup>
+                </GeometryDrawing.Geometry>
+                <GeometryDrawing.Pen>
+                    <Pen Brush="Black" Thickness="2"/>
+                </GeometryDrawing.Pen>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <!-- Line Tool Icon -->
+    <DrawingImage x:Key="LineIcon">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="Black">
+                <GeometryDrawing.Geometry>
+                    <LineGeometry StartPoint="2,2" EndPoint="14,14"/>
+                </GeometryDrawing.Geometry>
+                <GeometryDrawing.Pen>
+                    <Pen Brush="Black" Thickness="2"/>
+                </GeometryDrawing.Pen>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <!-- Transformer Tool Icon -->
+    <DrawingImage x:Key="TransformerIcon">
+        <DrawingImage.Drawing>
+            <GeometryDrawing>
+                <GeometryDrawing.Geometry>
+                    <GeometryGroup>
+                        <RectangleGeometry Rect="4,4,8,8"/>
+                        <EllipseGeometry Center="4,8" RadiusX="2" RadiusY="4"/>
+                        <EllipseGeometry Center="12,8" RadiusX="2" RadiusY="4"/>
+                    </GeometryGroup>
+                </GeometryDrawing.Geometry>
+                <GeometryDrawing.Pen>
+                    <Pen Brush="Black" Thickness="1"/>
+                </GeometryDrawing.Pen>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <!-- Pole Tool Icon -->
+    <DrawingImage x:Key="PoleIcon">
+        <DrawingImage.Drawing>
+            <GeometryDrawing>
+                <GeometryDrawing.Geometry>
+                    <PathGeometry>
+                        <PathFigure StartPoint="6,2">
+                            <LineSegment Point="10,2"/>
+                            <LineSegment Point="12,14"/>
+                            <LineSegment Point="4,14"/>
+                            <LineSegment Point="6,2"/>
+                        </PathFigure>
+                    </PathGeometry>
+                </GeometryDrawing.Geometry>
+                <GeometryDrawing.Pen>
+                    <Pen Brush="Black" Thickness="1"/>
+                </GeometryDrawing.Pen>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <!-- Note Tool Icon -->
+    <DrawingImage x:Key="NoteIcon">
+        <DrawingImage.Drawing>
+            <GeometryDrawing>
+                <GeometryDrawing.Geometry>
+                    <PathGeometry>
+                        <PathFigure StartPoint="2,2">
+                            <LineSegment Point="14,2"/>
+                            <LineSegment Point="14,14"/>
+                            <LineSegment Point="2,14"/>
+                            <LineSegment Point="2,2"/>
+                        </PathFigure>
+                    </PathGeometry>
+                </GeometryDrawing.Geometry>
+                <GeometryDrawing.Pen>
+                    <Pen Brush="Black" Thickness="1"/>
+                </GeometryDrawing.Pen>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <!-- Measure Tool Icon -->
+    <DrawingImage x:Key="MeasureIcon">
+        <DrawingImage.Drawing>
+            <GeometryDrawing>
+                <GeometryDrawing.Geometry>
+                    <GeometryGroup>
+                        <LineGeometry StartPoint="2,8" EndPoint="14,8"/>
+                        <LineGeometry StartPoint="2,6" EndPoint="2,10"/>
+                        <LineGeometry StartPoint="14,6" EndPoint="14,10"/>
+                    </GeometryGroup>
+                </GeometryDrawing.Geometry>
+                <GeometryDrawing.Pen>
+                    <Pen Brush="Black" Thickness="1"/>
+                </GeometryDrawing.Pen>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+</ResourceDictionary>

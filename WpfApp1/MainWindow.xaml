@@ -1,0 +1,89 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:controls="clr-namespace:WpfApp1.Controls"
+        mc:Ignorable="d"
+        Title="Elektrik Şebekesi Tasarımı" Height="800" Width="1200">
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Dosya">
+                <MenuItem Header="Yeni" Command="New"/>
+                <MenuItem Header="Aç" Command="Open"/>
+                <MenuItem Header="Kaydet" Command="Save"/>
+                <MenuItem Header="Farklı Kaydet" Command="SaveAs"/>
+                <Separator/>
+                <MenuItem Header="Çıkış" Command="Close"/>
+            </MenuItem>
+            <MenuItem Header="Düzenle">
+                <MenuItem Header="Geri Al" Command="Undo"/>
+                <MenuItem Header="İleri Al" Command="Redo"/>
+                <Separator/>
+                <MenuItem Header="Kes" Command="Cut"/>
+                <MenuItem Header="Kopyala" Command="Copy"/>
+                <MenuItem Header="Yapıştır" Command="Paste"/>
+                <MenuItem Header="Sil" Command="Delete"/>
+            </MenuItem>
+            <MenuItem Header="Görünüm">
+                <MenuItem Header="Yakınlaştır" Command="local:DrawingCommands.ZoomIn"/>
+                <MenuItem Header="Uzaklaştır" Command="local:DrawingCommands.ZoomOut"/>
+                <MenuItem Header="Sığdır" Command="local:DrawingCommands.ZoomFit"/>
+            </MenuItem>
+        </Menu>
+
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <ToggleButton x:Name="SelectTool" ToolTip="Seçim Aracı">
+                    <Image Source="/Images/select.png" Width="16" Height="16"/>
+                </ToggleButton>
+                <ToggleButton x:Name="PanTool" ToolTip="Kaydırma Aracı">
+                    <Image Source="/Images/pan.png" Width="16" Height="16"/>
+                </ToggleButton>
+                <ToggleButton x:Name="ZoomTool" ToolTip="Yakınlaştırma Aracı">
+                    <Image Source="/Images/zoom.png" Width="16" Height="16"/>
+                </ToggleButton>
+                <Separator/>
+                <ToggleButton x:Name="LineTool" ToolTip="Hat Çizme Aracı">
+                    <Image Source="/Images/line.png" Width="16" Height="16"/>
+                </ToggleButton>
+                <ToggleButton x:Name="TransformerTool" ToolTip="Trafo Ekleme Aracı">
+                    <Image Source="/Images/transformer.png" Width="16" Height="16"/>
+                </ToggleButton>
+                <ToggleButton x:Name="PoleTool" ToolTip="Direk Ekleme Aracı">
+                    <Image Source="/Images/pole.png" Width="16" Height="16"/>
+                </ToggleButton>
+                <ToggleButton x:Name="NoteTool" ToolTip="Not Ekleme Aracı">
+                    <Image Source="/Images/note.png" Width="16" Height="16"/>
+                </ToggleButton>
+                <ToggleButton x:Name="MeasureTool" ToolTip="Ölçüm Aracı">
+                    <Image Source="/Images/measure.png" Width="16" Height="16"/>
+                </ToggleButton>
+            </ToolBar>
+        </ToolBarTray>
+
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem x:Name="ToolStatus" Content="Araç: Seçim"/>
+            <Separator/>
+            <StatusBarItem x:Name="CoordinatesStatus" Content="X: 0  Y: 0"/>
+            <Separator/>
+            <StatusBarItem x:Name="ZoomStatus" Content="Zoom: 100%"/>
+            <Separator/>
+            <StatusBarItem x:Name="ElementCountStatus" Content="Eleman Sayısı: 0"/>
+        </StatusBar>
+
+        <Grid>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <controls:DrawingCanvas x:Name="DrawingCanvas">
+                    <controls:DrawingCanvas.LayoutTransform>
+                        <TransformGroup>
+                            <ScaleTransform x:Name="CanvasScale"/>
+                        </TransformGroup>
+                    </controls:DrawingCanvas.LayoutTransform>
+                </controls:DrawingCanvas>
+            </ScrollViewer>
+        </Grid>
+    </DockPanel>
+</Window>
